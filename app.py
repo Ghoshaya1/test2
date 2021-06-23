@@ -7,7 +7,7 @@ def table():
     rm_quote = lambda x: x.replace('"', '')
     df = pd.read_csv("/inmk/airtravel.csv",doublequote=False,converters={'\"1958\"': rm_quote,'\"1959\"': rm_quote,'\"1960\"': rm_quote})
     df = df.rename(columns=rm_quote)
-    return df.to_html()
+    return df.to_html(show_dimensions=True)
 
 @app.route("/Hello")
 def hello():
