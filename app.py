@@ -7,7 +7,7 @@ app = Flask(__name__)
 #intitialising the main page
 @app.route('/')
 def home():
-   return render_template('/inmk/home.html')
+   return render_template('home.html')
 
 # I have used this route to generate the table and give the row count
 @app.route("/RowCount")
