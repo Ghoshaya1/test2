@@ -3,7 +3,10 @@ import os
 import time
 import pandas as pd
 from flask import Flask
-app = Flask(__name__)
+project_root = os.path.dirname(__file__)
+template_path = os.path.join(project_root, './')
+app = Flask(__name__, template_folder=template_path)
+#app = Flask(__name__)
 #intitialising the main page
 @app.route('/')
 def home():
