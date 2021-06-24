@@ -4,8 +4,13 @@ import time
 import pandas as pd
 from flask import Flask
 app = Flask(__name__)
+#intitialising the main page
+@app.route('/')
+def home():
+   return render_template('home.html')
+
 # I have used this route to generate the table and give the row count
-@app.route("/")
+@app.route("/RowCount")
 def table():
     rm_quote = lambda x: x.replace('"', '')
     df = pd.read_csv("/inmk/airtravel.csv",doublequote=False,converters={'\"1958\"': rm_quote,'\"1959\"': rm_quote,'\"1960\"': rm_quote})
