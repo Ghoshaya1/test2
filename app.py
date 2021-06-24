@@ -15,7 +15,9 @@ def table():
 def pathtime():
     modTimesinceEpoc = os.path.getmtime("/inmk/airtravel.csv")
     modificationTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(modTimesinceEpoc))
-    return modificationTime
+    message = "The file was last modified at :"
+#    return modificationTime
+    return  '{} {}'.format(message, modificationTime)
          
 
 if __name__ == '__main__':
