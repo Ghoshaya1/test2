@@ -13,9 +13,9 @@ def table():
 
 @app.route("/TimeStamp")
 def pathtime():
-    test = "How are you"
- return render_template('Hello, World!',test=test)
-     
+    modTimesinceEpoc = os.path.getmtime("C:/Users/shali/git/airtravel.csv")
+    modificationTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(modTimesinceEpoc))
+    return modificationTime
          
 
 if __name__ == '__main__':
