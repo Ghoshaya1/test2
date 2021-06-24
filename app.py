@@ -1,3 +1,5 @@
+import os
+import time
 import pandas as pd
 from flask import Flask
 app = Flask(__name__)
@@ -9,10 +11,14 @@ def table():
     df = df.rename(columns=rm_quote)
     return df.to_html(show_dimensions=True)
 
-@app.route("/Hello")
-def hello():
-    return "Hello, World!"
+@app.route("/TimeStamp")
+def pathtime():
+    modTimesinceEpoc = os.path.getmtime("/inmk/airtravel.csv")
+    modificationTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(modTimesinceEpoc))
+    time = print("Last Modified Time : ", modificationTime )
+    return time
+    
          
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True,use_reloader=True)
