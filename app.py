@@ -13,7 +13,8 @@ def table():
 
 @app.route("/TimeStamp")
 def pathtime():
- return "Hello, World!"
+    test = "How are you"
+ return render_template('Hello, World!',test=test)
      
          
 
