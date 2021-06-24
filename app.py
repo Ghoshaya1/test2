@@ -13,9 +13,7 @@ def table():
 
 @app.route("/TimeStamp")
 def pathtime():
-    modTimesinceEpoc = os.path.getmtime("/inmk/airtravel.csv")
-    modificationTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(modTimesinceEpoc))
-    time = print("Last Modified Time : ", modificationTime )
+ return "Hello, World!"
      
          
 
