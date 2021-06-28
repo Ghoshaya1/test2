@@ -5,9 +5,9 @@ import pandas as pd
 from flask import Flask
 app = Flask(__name__)
 #Index Page
-@app.route("/")
+@app.route("/Index")
 def index():
-    str='Click on the below url to access the table and count<br/>https://inlinemarket.azurewebsites.net/RowCount<br/>Click on the below url to access the date when the csv file was modified<br/>https://inlinemarket.azurewebsites.net/TimeStamp'
+    str='https://inlinemarket.azurewebsites.net/TimeStamp'
     return str
 # I have used this route to generate the table and give the row count
 @app.route("/RowCount")
