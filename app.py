@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route("/Index")
 def index():
      return render_template('home.html')
-# I have used this route to generate the table and give the row count
+# I have used this route to generate the table and give the row count of the table
 @app.route("/RowCount")
 def table():
     rm_quote = lambda x: x.replace('"', '')
