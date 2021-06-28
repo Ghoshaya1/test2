@@ -32,18 +32,6 @@ jobs:
 
     # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
     
-    - script: |
-          pip install pytest pytest-azurepipelines pytest-cov
-          pytest -v — junitxml=junit/test-results.xml — cov — cov-report=xml — cov-report=html
-          displayName: “Pytest Unit Test with Coverage”
-          continueOnError: False
-    - task: PublishCodeCoverageResults@1
- displayName: ‘Publish Cobertura Coverage Report’
- inputs:
- codeCoverageTool: Cobertura
- summaryFileLocation: ‘$(System.DefaultWorkingDirectory)/**/coverage.xml’
- reportDirectory: ‘$(System.DefaultWorkingDirectory)/**/htmlcov’
-
     - name: Upload artifact for deployment jobs
       uses: actions/upload-artifact@v2
       with:
