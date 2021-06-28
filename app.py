@@ -22,7 +22,7 @@ def pathtime():
     modificationTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(modTimesinceEpoc))
     message = "The file was last modified at :"
 #    return modificationTime
-    return  '{} {} {}'.format(message, modificationTime, redirect("http://www.example.com", code=302))
+    return  '{} {}'.format(message, modificationTime)
          
 
 if __name__ == '__main__':
